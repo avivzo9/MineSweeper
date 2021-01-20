@@ -101,8 +101,6 @@ function cellClicked(elCell) {
     if (!elCell.classList.contains('clicked')) gGame.shownCount++
         if (cell.isMine) gameOver();
     if (gGame.shownCount === 16) victory();
-    console.log(location);
-    console.log(elCell);
     if (gMouse === 3) {
         console.log('sof sof!')
     }
