@@ -1,0 +1,60 @@
+body {
+    background-color: rgb(51, 58, 56);
+    text-align: center;
+    margin: auto;
+    cursor: default;
+}
+
+h1 {
+    color: rgb(207, 207, 207);
+}
+
+.table {
+    border: 4px solid rgba(255, 255, 255, 0.438);
+    padding: 1px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.cell {
+    background-color: rgb(100, 100, 100);
+    color: rgb(0, 0, 0);
+    width: 25px;
+    height: 25px;
+    transition: 0.3s;
+}
+
+.cell:hover {
+    background-color: rgb(141, 141, 141);
+    color: rgb(0, 0, 0);
+    width: 25px;
+    height: 25px;
+}
+
+button {
+    margin-bottom: 50px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.clicked {
+    background-color: rgb(207, 207, 207);
+    color: rgb(0, 0, 0);
+    width: 25px;
+    height: 25px;
+    transition: 0.3s;
+}
+
+.smiley {
+    margin-bottom: 40px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.time {
+    color: rgb(207, 207, 207);
+    font-size: large;
+    margin-bottom: 15px;
+}

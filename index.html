@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>MineSweeper game</title>
+</head>
+
+<body onload="init()">
+    <h1>MineSweeper!</h1>
+    <div class="button">
+        <button>easy</button>
+        <button>hard</button>
+        <button>expert</button>
+    </div>
+    <div class="smiley" onclick="restartGame()">
+    </div>
+    <div class="time"></div>
+    <div>
+        <table class="table" border="1px" cellpadding="10" onmousedown="whichButton(event)">
+            <tbody class="board"></tbody>
+        </table>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
