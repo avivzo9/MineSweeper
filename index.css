@@ -1,12 +1,13 @@
 body {
-    background-color: rgb(51, 58, 56);
+    background-color: rgb(19, 143, 108);
     text-align: center;
     margin: auto;
     cursor: default;
+    font-family: cursive;
 }
 
 h1 {
-    color: rgb(207, 207, 207);
+    color: rgba(0, 10, 151, 0.856);
 }
 
 .table {
@@ -22,6 +23,7 @@ h1 {
     width: 25px;
     height: 25px;
     transition: 0.3s;
+    border-radius: 5px;
 }
 
 .cell:hover {
@@ -32,23 +34,31 @@ h1 {
 }
 
 button {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     margin-top: 10px;
     margin-left: 20px;
     margin-right: 20px;
     padding: 7px;
     border: 1px solid black;
     border-radius: 10px;
-    cursor: pointer;
-    background-color: rgba(255, 153, 0, 0.705);
+    cursor: none;
+    background-color: rgba(70, 46, 179, 0.705);
     color: rgb(255, 255, 255);
     transition: 0.3s;
+    font-family: cursive;
 }
 
 button:hover {
     background-color: rgb(255, 255, 255);
-    color: rgba(255, 153, 0, 0.705);
+    color: rgb(35, 0, 190);
     border: 3px solid white;
+    font-size: medium;
+}
+
+button:active {
+    color: coral;
+    background-color: rgb(19, 143, 108);
+    border: 1px solid black;
 }
 
 .clicked {
@@ -60,7 +70,7 @@ button:hover {
 }
 
 .smiley {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     font-size: 40px;
     cursor: pointer;
     transition: 0.3s;
@@ -68,6 +78,7 @@ button:hover {
 
 .smiley:hover {
     font-size: 45px;
+    font-size: 50px;
 }
 
 .time {
