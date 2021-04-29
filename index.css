@@ -41,7 +41,7 @@ button {
     padding: 7px;
     border: 1px solid black;
     border-radius: 10px;
-    cursor: none;
+    cursor: pointer;
     background-color: rgba(70, 46, 179, 0.705);
     color: rgb(255, 255, 255);
     transition: 0.3s;
@@ -52,7 +52,6 @@ button:hover {
     background-color: rgb(255, 255, 255);
     color: rgb(35, 0, 190);
     border: 3px solid white;
-    font-size: medium;
 }
 
 button:active {
@@ -77,8 +76,7 @@ button:active {
 }
 
 .smiley:hover {
-    font-size: 45px;
-    font-size: 50px;
+    font-size: 42px;
 }
 
 .time {

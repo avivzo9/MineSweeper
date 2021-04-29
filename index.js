@@ -71,11 +71,13 @@ function buildBoard() {
 
 
 function createBombs(board, mineNum) {
-    for (var i = 0; i < mineNum; i++) {
+    var mineCount = 0;
+    while (mineCount < mineNum) {
         var randI = getRandomInt(0, gLevel.size);
         var randJ = getRandomInt(0, gLevel.size);
         if (!board[randI][randJ].isMine && board[randI][randJ].isShown) {
             board[randI][randJ].isMine = true;
+            mineCount++;
         }
     }
 }
@@ -90,7 +92,7 @@ function renderBoard(board) {
             var tdId = `cell-${i}-${j}`;
             var className = (currCell.isShown) ? 'cell' : 'clicked';
             strHtml += `<td id="${tdId}" class="${className}" onclick="cellClicked(this)"
-            onmousedown="whichButton(event, this)">`;
+            onmousedown="handleRightMouseClick(event, this)">`;
             if (countClick >= 1) {
                 if ((currCell.isMine) && (!currCell.isShown)) strHtml += BOMB;
                 if (!currCell.isShown) {
@@ -123,7 +125,7 @@ function setMinesNegsCount(cellI, cellJ, board) {
                 var currCell = board[i][j];
             }
         }
-        if (countNegs === 0) return countNegs = EMPTY;
+        if (!countNegs) return countNegs = EMPTY;
         else {
             currCell.minesAroundCount = countNegs;
             return countNegs;
@@ -163,7 +165,7 @@ function cellClicked(elCell) {
     renderBoard(gBoard);
 };
 
-function whichButton(event, elCell) {
+function handleRightMouseClick(event, elCell) {
     if (event.which === 3) {
         document.addEventListener('contextmenu', event => event.preventDefault(true));
         if (!gGame.isOn) return;
@@ -184,7 +186,7 @@ function whichButton(event, elCell) {
         }
         renderBoard(gBoard);
         return;
-    } else return false;
+    } else return;
 }
 
 function createMat(ROWS, COLS) {
@@ -237,7 +239,7 @@ function victory() {
 }
 
 function timer() {
-    var elTimer = document.querySelector('.time')
+    var elTimer = document.querySelector('.time');
     elTimer.innerText = '⏱ time: ' + ++gGame.secsPassed;
 }
 
@@ -248,31 +250,23 @@ function gameLevels(elButton) {
             size: 4,
             mines: 2
         };
-        console.clear();
-        clearInterval(gTimeInterval)
-        gTimeInterval = null;
-        init();
     } else if (elButton.classList.contains('hard-button')) {
         console.log('hard');
         gLevel = {
             size: 8,
             mines: 12
         };
-        console.clear();
-        clearInterval(gTimeInterval)
-        gTimeInterval = null;
-        init();
     } else if (elButton.classList.contains('expert-button')) {
         console.log('expert');
         gLevel = {
             size: 12,
             mines: 30
         };
-        console.clear();
-        clearInterval(gTimeInterval)
-        gTimeInterval = null;
-        init();
     }
+    console.clear();
+    clearInterval(gTimeInterval)
+    gTimeInterval = null;
+    init();
 }
 
 function minesReveal(board) {
