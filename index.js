@@ -214,14 +214,12 @@ function getRandomInt(min, max) {
 }
 
 function restartGame() {
-    console.clear();
     clearInterval(gTimeInterval)
     gTimeInterval = null;
     init();
 }
 
 function gameOver() {
-    console.log('game over!');
     var elSmiley = document.querySelector('.smiley')
     elSmiley.innerText = BLOW;
     gGame.isOn = false;
@@ -230,7 +228,6 @@ function gameOver() {
 }
 
 function victory() {
-    console.log('victory!');
     var elSmiley = document.querySelector('.smiley')
     elSmiley.innerText = WINNER;
     gGame.isOn = false;
@@ -245,25 +242,21 @@ function timer() {
 
 function gameLevels(elButton) {
     if (elButton.classList.contains('easy-button')) {
-        console.log('easy');
         gLevel = {
             size: 4,
             mines: 2
         };
     } else if (elButton.classList.contains('hard-button')) {
-        console.log('hard');
         gLevel = {
             size: 8,
             mines: 12
         };
     } else if (elButton.classList.contains('expert-button')) {
-        console.log('expert');
         gLevel = {
             size: 12,
             mines: 30
         };
     }
-    console.clear();
     clearInterval(gTimeInterval)
     gTimeInterval = null;
     init();

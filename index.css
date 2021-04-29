@@ -68,11 +68,19 @@ button:active {
     transition: 0.3s;
 }
 
+.smiley-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .smiley {
     margin-bottom: 20px;
     font-size: 40px;
     cursor: pointer;
     transition: 0.3s;
+    width: 60px;
+    text-align: center;
 }
 
 .smiley:hover {
